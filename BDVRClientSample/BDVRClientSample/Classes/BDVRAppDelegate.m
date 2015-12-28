@@ -15,11 +15,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.viewController = [[BDVRViewController alloc] initWithNibName:@"BDVRViewController" bundle:nil];
-    self.window.rootViewController = self.viewController;
-    [self.window makeKeyAndVisible];
+    //self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    //// Override point for customization after application launch.
+    //self.viewController = [[BDVRViewController alloc] initWithNibName:@"BDVRViewController" bundle:nil];
+    //self.window.rootViewController = self.viewController;
+    //[self.window makeKeyAndVisible];
     return YES;
 }
 

@@ -69,6 +69,8 @@
 		83FD68FF17F4166A00106039 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83FD68FE17F4166A00106039 /* QuartzCore.framework */; };
 		83FD690117F4168900106039 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83FD690017F4168900106039 /* GLKit.framework */; };
 		E15DFA371A1351E500252CF8 /* BDVoiceRecognitionClientResources in Resources */ = {isa = PBXBuildFile; fileRef = E15DFA361A1351E500252CF8 /* BDVoiceRecognitionClientResources */; };
+		EE4638551C31157D000E6B73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE4638541C31157D000E6B73 /* Main.storyboard */; };
+		EE4638591C3116C9000E6B73 /* BDVRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4638581C3116C9000E6B73 /* BDVRViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -161,6 +163,9 @@
 		83FD68FE17F4166A00106039 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		83FD690017F4168900106039 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		E15DFA361A1351E500252CF8 /* BDVoiceRecognitionClientResources */ = {isa = PBXFileReference; lastKnownFileType = folder; name = BDVoiceRecognitionClientResources; path = libBDVoiceRecognitionClient/BDVoiceRecognitionClientResources; sourceTree = SOURCE_ROOT; };
+		EE4638541C31157D000E6B73 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		EE4638571C3116C8000E6B73 /* BDVRClientSample-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "BDVRClientSample-Bridging-Header.h"; path = "Controller/BDVRClientSample-Bridging-Header.h"; sourceTree = "<group>"; };
+		EE4638581C3116C9000E6B73 /* BDVRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BDVRViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,9 +260,12 @@
 		832D56FF17F1621E00D3FD82 /* BDVRClientSample */ = {
 			isa = PBXGroup;
 			children = (
+				EE4638571C3116C8000E6B73 /* BDVRClientSample-Bridging-Header.h */,
+				EE4638561C311697000E6B73 /* Controller */,
 				832D571C17F165F100D3FD82 /* Classes */,
 				83E227B217F419E50049A216 /* Resources */,
 				832D570017F1621E00D3FD82 /* Supporting Files */,
+				EE4638541C31157D000E6B73 /* Main.storyboard */,
 			);
 			path = BDVRClientSample;
 			sourceTree = "<group>";
@@ -404,6 +412,14 @@
 			path = libBDVoiceRecognitionClient;
 			sourceTree = SOURCE_ROOT;
 		};
+		EE4638561C311697000E6B73 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EE4638581C3116C9000E6B73 /* BDVRViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -431,6 +447,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = BDVR;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = Baidu;
 				TargetAttributes = {
@@ -483,6 +500,7 @@
 				83E227D717F419E50049A216 /* bdvrrightbtn_highlight@2x.png in Resources */,
 				83E227D817F419E50049A216 /* bdvrwholebtb@2x.png in Resources */,
 				187E9A30183B088700FE4140 /* example_localRecord.pcm in Resources */,
+				EE4638551C31157D000E6B73 /* Main.storyboard in Resources */,
 				83E227D917F419E50049A216 /* bdvrwholebtn_highlight.png in Resources */,
 				83E227DA17F419E50049A216 /* bdvrwholebtn_highlight@2x.png in Resources */,
 				83E227EC17F428880049A216 /* microphone@2x.png in Resources */,
@@ -509,6 +527,7 @@
 				18A9694B186731CC00428196 /* CAXException.cpp in Sources */,
 				832D570617F1621E00D3FD82 /* main.m in Sources */,
 				832D572517F165F100D3FD82 /* BDVRAppDelegate.m in Sources */,
+				EE4638591C3116C9000E6B73 /* BDVRViewController.swift in Sources */,
 				832D572617F165F100D3FD82 /* BDVRSettingViewController.m in Sources */,
 				832D572717F165F100D3FD82 /* BDVRViewController.m in Sources */,
 				832D572A17F166FE00D3FD82 /* BDVRSConfig.m in Sources */,
@@ -576,6 +595,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -584,6 +604,7 @@
 				GCC_PREFIX_HEADER = "BDVRClientSample/BDVRClientSample-Prefix.pch";
 				INFOPLIST_FILE = "BDVRClientSample/BDVRClientSample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/libBDVoiceRecognitionClient",
@@ -593,6 +614,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "BDVRClientSample/Controller/BDVRClientSample-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
 			name = AdHoc;
@@ -661,6 +683,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -669,6 +692,7 @@
 				GCC_PREFIX_HEADER = "BDVRClientSample/BDVRClientSample-Prefix.pch";
 				INFOPLIST_FILE = "BDVRClientSample/BDVRClientSample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/libBDVoiceRecognitionClient",
@@ -678,6 +702,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "BDVRClientSample/Controller/BDVRClientSample-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -686,6 +712,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -694,6 +721,7 @@
 				GCC_PREFIX_HEADER = "BDVRClientSample/BDVRClientSample-Prefix.pch";
 				INFOPLIST_FILE = "BDVRClientSample/BDVRClientSample-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/libBDVoiceRecognitionClient",
@@ -703,6 +731,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "BDVRClientSample/Controller/BDVRClientSample-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

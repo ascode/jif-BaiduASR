@@ -22,7 +22,6 @@
 @synthesize isNeedNLU;
 @synthesize libVersion = _libVersion;
 
-#pragma mark - init & dealloc
 
 - (id)init 
 {
