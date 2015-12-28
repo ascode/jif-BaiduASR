@@ -27,6 +27,10 @@ class BDVRViewController:  UIViewController {
 
         // Do any additional setup after loading the view.
         self.test.text = "jifnei"
+        
+        BDVRLogger.setLogLevel(BDVR_LOG_DEBUG)
+        
+        //[BDVRLogger setLogLevel:BDVR_LOG_DEBUG];
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,7 +73,7 @@ class BDVRViewController:  UIViewController {
         // 创建语音识别界面，在其viewdidload方法中启动语音识别
         var tmpAudioViewController : BDVRCustomRecognitonViewController = BDVRCustomRecognitonViewController.init(nibName: nil, bundle: nil)
         
-        
+        UIApplication.sharedApplication().keyWindow?.addSubview(tmpAudioViewController.view)
         
 //        tmpAudioViewController.clientSampleViewController = self
 //        self.audioViewController = tmpAudioViewController
